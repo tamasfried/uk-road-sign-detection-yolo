@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>UK Road Sign Detection</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main>
+    <h1>UK Road Sign Detection</h1>
+    <p class="subtitle">Upload a photo to detect road signs and their confidence scores.</p>
+
+    <div class="controls">
+      <input type="file" id="file-input" accept="image/*" />
+      <button id="detect-btn" disabled>Detect signs</button>
+      <label class="api-url-label">
+        API URL
+        <input type="text" id="api-url" value="http://localhost:8000" />
+      </label>
+    </div>
+
+    <p id="status"></p>
+
+    <div class="canvas-wrap">
+      <canvas id="canvas"></canvas>
+    </div>
+
+    <table id="results-table" hidden>
+      <thead>
+        <tr>
+          <th>Class</th>
+          <th>Confidence</th>
+        </tr>
+      </thead>
+      <tbody id="results-body"></tbody>
+    </table>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
